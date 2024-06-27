@@ -25,10 +25,12 @@ const images = [
   },
 ];
 function createImageGallery(images) {
-  const imageEl = document.querySelector('ul.gallery');
-  imageEl.style.Display = 'display: flex';
-  ('flex-wrap: wrap');
-  imageEl.style.borderStyle = 'dotted';
+  const imageEl = document.querySelector('ul.js-gallery');
+  imageEl.style.display = 'flex';
+  imageEl.style.flexWrap = 'wrap';
+  imageEl.style.listStyleType = 'none';
+  imageEl.style.alignItems = 'center';
+  imageEl.style.gap = '48';
   const elUl = document.createDocumentFragment();
   images.forEach(image => {
     const li = document.createElement('li');
@@ -36,7 +38,7 @@ function createImageGallery(images) {
     img.src = image.url;
     img.alt = image.alt;
     img.width = 320;
-    img.height = 160;
+    img.height = 180;
     li.append(img);
     elUl.append(li);
     imageEl.append(li);
