@@ -26,11 +26,10 @@ const images = [
 ];
 function createImageGallery(images) {
   const imageEl = document.querySelector('ul.js-gallery');
-  imageEl.style.display = 'flex';
-  imageEl.style.flexWrap = 'wrap';
-  imageEl.style.listStyleType = 'none';
-  imageEl.style.alignItems = 'center';
-  imageEl.style.gap = '48';
+  imageEl.style.cssText = `display: flex;
+  flex-wrap: wrap;`;
+  imageEl.style.listStyleType = `none`;
+  imageEl.style.gap = '48px 32px';
   const elUl = document.createDocumentFragment();
   images.forEach(image => {
     const li = document.createElement('li');
@@ -39,9 +38,10 @@ function createImageGallery(images) {
     img.alt = image.alt;
     img.width = 320;
     img.height = 180;
-    li.append(img);
-    elUl.append(li);
-    imageEl.append(li);
+    li.appendChild(img);
+    elUl.appendChild(li);
+    imageEl.appendChild(li);
   });
 }
 createImageGallery(images);
+console.log(images);
