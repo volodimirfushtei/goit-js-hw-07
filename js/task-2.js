@@ -29,19 +29,19 @@ function createImageGallery(images) {
   imageEl.style.cssText = `display: flex;
   flex-wrap: wrap;`;
   imageEl.style.listStyleType = `none`;
-  imageEl.style.gap = '48px 32px';
+  imageEl.style.gap = '48px 24px';
   const elUl = document.createDocumentFragment();
   images.forEach(image => {
     const li = document.createElement('li');
     const img = document.createElement('img');
     img.src = image.url;
     img.alt = image.alt;
-    img.width = 320;
-    img.height = 180;
+    img.width = 300;
+    img.height = 300;
     li.appendChild(img);
     elUl.appendChild(li);
-    imageEl.appendChild(li);
   });
+  imageEl.appendChild(elUl);
 }
 createImageGallery(images);
 console.log(images);
