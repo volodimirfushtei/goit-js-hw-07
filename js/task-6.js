@@ -3,7 +3,6 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
-
 const divEl = document.querySelector('#controls');
 const inputEl = document.querySelector('input');
 const buttonCreate = document.querySelector('button[data-create]');
