@@ -19,8 +19,7 @@ buttonCreate.addEventListener('click', () => {
     return;
   }
   function createBoxes(amount) {
-    inputEl.value = '';
-    boxesContainer.innerHTML = '';
+    const fragment = document.createDocumentFragment();
     let size = 30;
     for (let i = 0; i < amount; i++) {
       const div = document.createElement('div');
@@ -28,9 +27,12 @@ buttonCreate.addEventListener('click', () => {
       div.style.height = `${size}px`;
       div.style.backgroundColor = getRandomHexColor();
       div.style.marginBottom = '10px';
-      boxesContainer.appendChild(div);
+      fragment.appendChild(div);
       size += 10;
     }
+    inputEl.value = '';
+    boxesContainer.innerHTML = '';
+    boxesContainer.appendChild(fragment);
   }
 });
 function destroyBoxes() {
