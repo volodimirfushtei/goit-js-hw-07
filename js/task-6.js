@@ -18,6 +18,9 @@ buttonCreate.addEventListener('click', () => {
   } else {
     return;
   }
+  boxesContainer.style.marginTop = '32px';
+  boxesContainer.style.display = 'flex';
+  boxesContainer.style.columnGap = '44px';
   function createBoxes(amount) {
     const fragment = document.createDocumentFragment();
     let size = 30;
